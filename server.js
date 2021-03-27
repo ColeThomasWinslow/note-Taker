@@ -52,9 +52,17 @@ app.post("/api/notes", function (req, res) {
     })
 })
 
-app.delete("/api/notes:id", function(req, res){
+app.delete("/api/notes/:id", function(req, res){
     //delete note based of id
-const { id } = req.params
+const { id } = req.params;
+console.log({ id })
+;
+
+// const newNotes = notes.filter(note => note.id !== id)
+//     // fs.writeFileSync("./db/db.json", JSON.stringify(newNotes))
+// console.log(newNotes)
+//     res.send("Successfully deleted")
+
 });
 
 app.listen(PORT, () => console.log("APP IS LISTENING ON PORT" + PORT));
