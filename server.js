@@ -46,7 +46,7 @@ app.post("/api/notes", function (req, res) {
         parsedData = JSON.stringify(parsedData);
         console.log("stringifiyed", parsedData);
 
-        fs.writeFile("db.json", parsedData, function (err, data) {
+        fs.writeFile("./db/db.json", parsedData, function (err, data) {
          if (err) throw err
         })
     })
